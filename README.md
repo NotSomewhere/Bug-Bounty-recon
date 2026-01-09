@@ -97,8 +97,8 @@ export PATH="$PATH:$HOME/go/bin"
 
 ## 🛠️ Installation
 
-git clone https://github.com/YOUR_USERNAME/YOUR_REPO.git
-cd YOUR_REPO
+git clone https://github.com/NotSomewhere/recon-automation-suite.git
+cd recon-automation-suite
 
 ---
 

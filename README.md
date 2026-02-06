@@ -77,44 +77,81 @@ This project focuses on:
 - Go 1.20+
 
 ### 🐍 Python Dependency
+```bash
 pip3 install requests
+```
 
 ### 🧰 External Tools
+```bash
 go install github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
 go install github.com/projectdiscovery/httpx/cmd/httpx@latest
 go install github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
 go install github.com/tomnomnom/assetfinder@latest
+```
 
-sudo apt install -y nmap
+```bash
+sudo apt-get install -y nmap
+```
 
 ### 🧠 Nuclei Templates (Required)
+```bash
 nuclei -ut
+```
 
 Ensure Go binaries are in PATH:
+```bash
 export PATH="$PATH:$HOME/go/bin"
+```
 
 ---
 
 ## 🛠️ Installation
-
+```bash
 git clone https://github.com/NotSomewhere/Bug-Bounty-recon.git
 cd Bug-Bounty-recon
+pip3 install -e .
+```
 
 ---
 
 ## ▶️ Usage
 
+CLI (recommended):
+```bash
+bbr example.com -o out
+```
+
+Direct script:
+```bash
 python3 recon.py example.com -o out
+```
 
 ### 🔔 With Discord Webhook
-python3 recon.py example.com -o out --webhook https://discord.com/api/webhooks/XXXX/XXXX
+```bash
+bbr example.com -o out --i-am-authorized --webhook https://discord.com/api/webhooks/XXXX/XXXX
+```
+
+### ✅ Active Scanning (required flag)
+```bash
+bbr example.com -o out --i-am-authorized
+```
 
 ### ⚙️ Options
-domain        Target domain (example.com)
--o / --out    Output directory (default: out)
---no-crtsh    Skip crt.sh enumeration
---no-httpx   Skip httpx even if installed
---webhook    Discord webhook URL (optional)
+```
+domain                 Target domain (example.com)
+-o / --out             Output directory (default: out)
+--no-crtsh             Skip crt.sh enumeration
+--no-httpx             Skip httpx even if installed
+--no-nmap-full         Skip full nmap scan
+--no-eyewitness        Skip EyeWitness
+--no-nuclei            Skip Nuclei
+--webhook              Discord webhook URL (optional)
+--user-agent           HTTP user-agent (default: bug-bounty-recon/1.0)
+--http-timeout         HTTP timeout in seconds (default: 8)
+--max-body             Max bytes read per page (default: 200000)
+--eyewitness-path      Path to EyeWitness directory (optional)
+--i-am-authorized      Required for active probing and scanning
+```
 
 ---
 
@@ -126,6 +163,7 @@ out/
   alive_hosts.txt
   httpx.jsonl
   tech_summary.txt
+  page_types.txt
   nmap_quick.txt
   nmap_full.txt
   interesting_ports.txt

@@ -121,11 +121,6 @@ CLI (recommended):
 bbr example.com -o out
 ```
 
-Direct script:
-```bash
-python3 recon.py example.com -o out
-```
-
 ### 🔔 With Discord Webhook
 ```bash
 bbr example.com -o out --i-am-authorized --webhook https://discord.com/api/webhooks/XXXX/XXXX

@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bbr"
+version = "0.1.0"
+description = "Bug bounty recon automation suite"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = ["requests>=2.28"]
+
+[project.scripts]
+bbr = "bbr_cli:cli"

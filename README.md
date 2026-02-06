@@ -97,8 +97,8 @@ export PATH="$PATH:$HOME/go/bin"
 
 ## 🛠️ Installation
 
-git clone https://github.com/NotSomewhere/recon-automation-suite.git
-cd recon-automation-suite
+git clone https://github.com/NotSomewhere/Bug-Bounty-recon.git
+cd Bug-Bounty-recon
 
 ---
 
